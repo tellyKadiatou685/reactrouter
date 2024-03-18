@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinémathèque</title>
+    <style>
+        /* Styling */
+        .film-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page d'accueil avec les cartes de film -->
+    <div id="accueil">
+        <h1>Bienvenue à la Cinémathèque</h1>
+        <div class="film-card" onclick="afficherFilm('interstellar')">Interstellar</div>
+        <div class="film-card" onclick="afficherFilm('inception')">Inception</div>
+        <!-- Ajoutez d'autres films ici -->
+    </div>
+
+    <!-- Pages de description des films -->
+    <div id="interstellar" style="display: none;">
+        <h2>Interstellar</h2>
+        <p>Description du film Interstellar.</p>
+        <a href="lien_vers_bande_annonce_interstellar">Regarder la bande-annonce</a>
+        <br><br>
+        <a href="#" onclick="retourAccueil()">Retour à l'accueil</a>
+    </div>
+
+    <div id="inception" style="display: none;">
+        <h2>Inception</h2>
+        <p>Description du film Inception.</p>
+        <a href="lien_vers_bande_annonce_inception">Regarder la bande-annonce</a>
+        <br><br>
+        <a href="#" onclick="retourAccueil()">Retour à l'accueil</a>
+    </div>
+
+    <!-- JavaScript pour gérer les interactions -->
+    <script>
+        function afficherFilm(filmId) {
+            // Masquer la page d'accueil
+            document.getElementById('accueil').style.display = 'none';
+            // Afficher la page du film sélectionné
+            document.getElementById(filmId).style.display = 'block';
+        }
+
+        function retourAccueil() {
+            // Masquer la page du film
+            document.getElementById('interstellar').style.display = 'none';
+            document.getElementById('inception').style.display = 'none';
+            // Afficher la page d'accueil
+            document.getElementById('accueil').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
